@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Mini Ops: Laser Arena</title><link rel="stylesheet" href="style.css"></head>
+<body><div id="app">
+  <div id="hud">
+    <div class="brand"><span class="brand-mark">✦</span><div><b>MINI OPS</b><small>LASER ARENA</small></div></div>
+    <div class="hud-right"><span id="modeBadge">PRACTICE</span><span id="roomLabel">OFFLINE</span><button id="pauseBtn" aria-label="Pause">Ⅱ</button></div>
+    <div class="status"><span class="dot"></span><span id="statusText">Ready to train</span></div>
+    <div class="crosshair"><i></i><i></i><i></i><i></i><b></b></div><div id="toast"></div>
+    <div id="bottomHud"><div class="hpbox"><span>SUIT ENERGY</span><div class="hpbar"><i id="hpFill"></i></div><b id="hpText">100</b></div><div class="scorebox"><small>TAGS</small><b id="score">00</b></div><div class="mapbox"><small>SECTOR</small><b id="mapName">RUSTYARD</b></div></div>
+  </div>
+  <div id="menu" class="overlay"><div class="menu-card"><div class="eyebrow">TRAINING SIMULATION / 07</div><h1>ENTER THE<br><span>ARENA.</span></h1><p class="sub">A compact 3D laser-tag arena. Train solo or join a room with friends.</p>
+    <div class="mode-row"><button class="mode active" data-mode="practice">PRACTICE MODE<small>Targets + training bots</small></button><button class="mode" data-mode="online">ONLINE MULTIPLAYER<small>Join with room code</small></button></div>
+    <label>OPERATOR CALLSIGN<input id="callsign" maxlength="16" value="Rookie" autocomplete="off"></label>
+    <div class="two"><label>MAP<select id="mapSelect"><option value="yard">Rustyard Arena</option><option value="town">Little Town</option></select></label><label>LASER SWORD<select id="swordSelect"><option value="0">01 — Pulse</option><option value="1">02 — Ember</option><option value="2">03 — Glacier</option><option value="3">04 — Nova</option><option value="4">05 — Toxic</option><option value="5">06 — Prism</option><option value="6">07 — Eclipse</option></select></label></div>
+    <div id="onlineFields" class="hidden"><label>ROOM CODE<input id="roomCode" maxlength="10" value="STAR7" autocomplete="off"></label><small class="muted">Use the same code and server URL as your friends.</small></div>
+    <button id="startBtn" class="primary">START TRAINING <span>→</span></button><div class="menu-foot"><span>WASD / LEFT STICK TO MOVE</span><span>CLICK / SPACE TO SWING</span></div>
+  </div></div>
+  <div id="pauseOverlay" class="overlay hidden"><div class="menu-card compact"><div class="eyebrow">SIMULATION PAUSED</div><h2>PAUSE MENU</h2><button id="resumeBtn" class="primary">RESUME <span>→</span></button><button id="backBtn" class="secondary">BACK TO LOBBY</button></div></div>
+  <div id="controls"><div id="joystick"><div id="stick"></div></div><button id="mobileSwing" class="swing-btn">⚡<small>SWING</small></button><div id="mobileLook"></div><div id="weaponWheel"></div></div>
+  <div id="help">WASD MOVE · MOUSE LOOK · CLICK / SPACE SWING · 1–7 CHANGE SWORD</div>
+</div><script src="/socket.io/socket.io.js"></script><script type="module" src="game.js"></script></body></html>
